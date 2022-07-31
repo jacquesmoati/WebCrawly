@@ -1,4 +1,4 @@
-#WebCrawly
+# WebCrawly
 
 ## Introduction
 
@@ -49,7 +49,7 @@ In order to maximise the bandwidith, I use two ThreadPoolExecutor (see `-nb_thre
 The first one for scrapping the URLS of each visited new nodes, the second scrapped in a multithreading way all emails contains in the final graphs. 
 
 A progress bar (tqdm) is implemented, which follows the progress of emails scrapping for each node of the final graph, as follow : 
-![Alt text](tqdm_show.png "Optional title")
+![Alt text](Images/tqdm_show.png "Optional title")
 
 ### Graph analysis : most_relevant.py 🔍
 
@@ -77,14 +77,14 @@ We construct the 2 knowledge graphs for Princeton and Harvard (with a maximum of
 
 ### Harvard
 Domain KG representation 
-![Alt text](Harvard_1000.png "Optional title")
-![Alt text](Harvard_mining.png "Optional title")
+![Alt text](Images/Harvard_1000.png "Optional title")
+![Alt text](Images/Harvard_mining.png "Optional title")
 
 Concerning similarities for the top 30 URLS, we give an example : 
 For the following url : https://www.seas.harvard.edu/faculty?research[321]=321
 We compute the similarities regarding the remaining 29 top URLS and we find that there is a relevant patter recognized !
 
-![Alt text](Harvard_patternmatching.png "Optional title")
+![Alt text](Images/Harvard_patternmatching.png "Optional title")
 
 We know now that we can target the url with the following form: 
 https://www.seas.harvard.edu/faculty?research[id]=id&sort_by=field_last_name
