@@ -15,7 +15,7 @@ The output is a knowledge directed graph holding the crawled objects. Each nodes
 # Scripts
 ## Webcrawler 🌏 
 ### Environment 
-To run the Webcrawler you need to check that your environement will run properly. In order to do so you have the requirements.txt file at your disposal.
+To run the Webcrawler you need to check that your environement will run properly. In order to do so you have the [requirements.txt](https://github.com/jacquesmoati/WebCrawly/blob/main/requirements.txt)  file at your disposal.
 I suggest you to create a conda environment dedicated for the webcraler. 
 
 The script is running locally on my computer with a Python 3.10.4 version. 
