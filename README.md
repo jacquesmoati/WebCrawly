@@ -2,20 +2,19 @@
 
 ## Introduction
 
-This repository contains a webcrawler used to search the web for valid e-mail addresses that can later be used for various purposes (i.e. sending marketing material, etc.). In my case, I tried it on various US Universities website. 
+This repository contains a webcrawler used to search the web for valid e-mail addresses that can later be used for various purposes (i.e. sending marketing material, etc.). In my case, I tried it on various US Universities websites. 
 ### Input 
 
 The "Seed" (_input_) is a list of URLs that we start crawling, and the crawler will collect all emails adresses it contains on the pages pointed by these URLs. Then, it continues to all hyperlinks pointing to other urls and so on.
 
 ### Output
 
-
 The output is a knowledge directed graph holding the crawled objects. Each nodes represent a url (a page), an edge represents it oriented link from one page to another. Each nodes contain the list of email its html contains.
 
 # Scripts
 ## Webcrawler 🌏 
 ### Environment 
-To run the Webcrawler you need to check that your environement will run properly. In order to do so you have the [requirements.txt](https://github.com/jacquesmoati/WebCrawly/blob/main/requirements.txt)  file at your disposal.
+To run the Webcrawler you need to check that your environement will run properly. In order to do so you have the [requirements.txt](https://github.com/jacquesmoati/WebCrawly/blob/main/requirements.txt) file at your disposal.
 I suggest you to create a conda environment dedicated for the webcraler. 
 
 The script is running locally on my computer with a Python 3.10.4 version. 
@@ -78,6 +77,7 @@ We construct the 2 knowledge graphs for Princeton and Harvard (with a maximum of
 ### Harvard
 Domain KG representation 
 ![Alt text](Images/Harvard_1000.png "Optional title")
+The top 5 url found are the following ones : 
 ![Alt text](Images/Harvard_mining.png "Optional title")
 
 Concerning similarities for the top 30 URLS, we give an example : 
