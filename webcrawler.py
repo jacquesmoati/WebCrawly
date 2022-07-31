@@ -17,9 +17,10 @@ logging.basicConfig(format=FORMAT,level=logging.INFO)
 
 class WebCrawler:
     
-    def __init__(self, URLS = [], OUTPUT_NAME = [], pool = int) -> None:
+    def __init__(self, URLS = [], OUTPUT_NAME = [], pool = int, max_visit = int) -> None:
 
         # initialize list of URLS, visited and to be visited
+        self.max_visit = int(max_visit)
         self.pool = int(pool)
         print(self.pool)
         self.already_visited_url = []
@@ -141,7 +142,7 @@ class WebCrawler:
             self.tobevisited_urls = [x for x in self.tobevisited_urls if x not in self.already_visited_url]
             print("Remaining (Updated)number of ULR to visit: ", len(self.tobevisited_urls))
 
-            if self.G.number_of_nodes() > 1200: # max number of nodes to visit (max bounds)
+            if self.G.number_of_nodes() > self.max_visit: # max number of nodes to visit (max bounds)
                 break
 
             print("G size : ", self.G.number_of_nodes(),self.G.number_of_edges() )
@@ -169,11 +170,12 @@ if __name__ == '__main__':
     parser.add_argument('-seed_URL', nargs="+",required=True,dest='i_LIST_URLS', help="List of seed URLs that", default=default_list_urls)
     parser.add_argument('-output_name_graphs',nargs="+", required=True,dest='o_name', help="List of corresponding output names", default=default_output_urls)
     parser.add_argument('-nb_thread', required=True,dest='pool', help="Number of thread to launch while scrapping (to find the best bandwidith) ", default=64)
+    parser.add_argument('-max_urls_visited', required=True,dest='max_visit', help="", default=300)
 
     args = parser.parse_args()
     
-    for U,O in zip(args.i_LIST_URLS, args.o_name):
+    for U,O in zip(args.i_LIST_URLS, args.o_name,):
         U = [U]
         O = [O]
-        WebCrawler(U, O, args.pool).launch()
+        WebCrawler(U, O,  args.pool,args.max_visit).launch()
     
